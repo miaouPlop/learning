@@ -1,0 +1,167 @@
+{"app_name":"com.apple.WebKit.WebContent","timestamp":"2026-09-21 21:43:15.00 +0200","app_version":"8614","slice_uuid":"ad8c957f-8724-3ec5-84b0-27b00771bbe7","build_version":"8614.1.25.0.30","platform":2,"bundleID":"com.apple.WebKit.WebContent","share_with_app_devs":0,"is_first_party":1,"bug_type":"309","os_version":"iPhone OS 16.0 (20A362)","roots_installed":0,"name":"com.apple.WebKit.WebContent","incident_id":"6C2D4C79-7D4E-45C1-9091-FF731F050DB5"}
+{
+  "uptime" : 16000,
+  "procRole" : "Foreground",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "iPhone11,8",
+  "coalitionID" : 1231,
+  "osVersion" : {
+    "isEmbedded" : true,
+    "train" : "iPhone OS 16.0",
+    "releaseType" : "User",
+    "build" : "20A362"
+  },
+  "captureTime" : "2026-09-21 21:43:14.6359 +0200",
+  "incident" : "6C2D4C79-7D4E-45C1-9091-FF731F050DB5",
+  "pid" : 2044,
+  "cpuType" : "ARM-64",
+  "roots_installed" : 0,
+  "bug_type" : "309",
+  "procLaunch" : "2026-09-21 21:41:33.7577 +0200",
+  "procStartAbsTime" : 397613090575,
+  "procExitAbsTime" : 400034111378,
+  "procName" : "com.apple.WebKit.WebContent",
+  "procPath" : "\/private\/preboot\/Cryptexes\/OS\/System\/Library\/Frameworks\/WebKit.framework\/XPCServices\/com.apple.WebKit.WebContent.xpc\/com.apple.WebKit.WebContent",
+  "bundleInfo" : {"CFBundleShortVersionString":"8614","CFBundleVersion":"8614.1.25.0.30","CFBundleIdentifier":"com.apple.WebKit.WebContent"},
+  "parentProc" : "launchd",
+  "parentPid" : 1,
+  "coalitionName" : "com.apple.mobilesafari",
+  "crashReporterKey" : "ddbd467a3d210bed42d21e645c8e7b2bba605acf",
+  "basebandVersion" : "5.00.01",
+  "vmRegionInfo" : "0x1376 is not in any region.  Bytes before following region: 68719471754\n      REGION TYPE                 START - END      [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      UNUSED SPACE AT START\n--->  \n      commpage (reserved)     1000000000-7000000000 [384.0G] ---\/--- SM=NUL  ...(unallocated)",
+  "exception" : {"codes":"0x0000000000000001, 0x0000000000001376","rawCodes":[1,4982],"type":"EXC_BAD_ACCESS","signal":"SIGSEGV","subtype":"KERN_INVALID_ADDRESS at 0x0000000000001376"},
+  "termination" : {"flags":0,"code":11,"namespace":"SIGNAL","indicator":"Segmentation fault: 11","byProc":"exc handler","byPid":2044},
+  "vmregioninfo" : "0x1376 is not in any region.  Bytes before following region: 68719471754\n      REGION TYPE                 START - END      [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      UNUSED SPACE AT START\n--->  \n      commpage (reserved)     1000000000-7000000000 [384.0G] ---\/--- SM=NUL  ...(unallocated)",
+  "faultingThread" : 12,
+  "threads" : [{"id":247549,"queue":"com.apple.main-thread","frames":[{"imageOffset":31347480,"symbol":"WebCore::RenderBox::mapLocalToContainer(WebCore::RenderLayerModelObject const*, WebCore::TransformState&, WTF::OptionSet<WebCore::MapCoordinatesMode>, bool*) const","symbolLocation":548,"imageIndex":0},{"imageOffset":31347456,"symbol":"WebCore::RenderBox::mapLocalToContainer(WebCore::RenderLayerModelObject const*, WebCore::TransformState&, WTF::OptionSet<WebCore::MapCoordinatesMode>, bool*) const","symbolLocation":524,"imageIndex":0},{"imageOffset":31347624,"symbol":"WebCore::RenderBox::mapLocalToContainer(WebCore::RenderLayerModelObject const*, WebCore::TransformState&, WTF::OptionSet<WebCore::MapCoordinatesMode>, bool*) const","symbolLocation":692,"imageIndex":0},{"imageOffset":31347624,"symbol":"WebCore::RenderBox::mapLocalToContainer(WebCore::RenderLayerModelObject const*, WebCore::TransformState&, WTF::OptionSet<WebCore::MapCoordinatesMode>, bool*) const","symbolLocation":692,"imageIndex":0},{"imageOffset":32451684,"symbol":"WebCore::RenderObject::localToContainerQuad(WebCore::FloatQuad const&, WebCore::RenderLayerModelObject const*, WTF::OptionSet<WebCore::MapCoordinatesMode>, bool*) const","symbolLocation":212,"imageIndex":0},{"imageOffset":31099516,"symbol":"WebCore::RenderBlock::absoluteQuadsIgnoringContinuation(WebCore::FloatRect const&, WTF::Vector<WebCore::FloatQuad, 0ul, WTF::CrashOnOverflow, 16ul, WTF::FastMalloc>&, bool*) const","symbolLocation":100,"imageIndex":0},{"imageOffset":31098084,"symbol":"WebCore::RenderBlock::absoluteQuads(WTF::Vector<WebCore::FloatQuad, 0ul, WTF::CrashOnOverflow, 16ul, WTF::FastMalloc>&, bool*) const","symbolLocation":124,"imageIndex":0},{"imageOffset":32445532,"symbol":"WebCore::RenderObject::absoluteBoundingBoxRect(bool, bool*) const","symbolLocation":96,"imageIndex":0},{"imageOffset":20225076,"symbol":"WebCore::eventRectRelativeToRoot(WebCore::Node*, WebCore::RenderObject*)","symbolLocation":76,"imageIndex":0},{"imageOffset":20222324,"symbol":"WebCore::Document::updateTouchEventRegions()","symbolLocation":272,"imageIndex":0},{"imageOffset":27352028,"symbol":"WebCore::Page::updateRendering()","symbolLocation":2672,"imageIndex":0},{"imageOffset":876684,"symbol":"WebKit::RemoteLayerTreeDrawingArea::updateRendering()","symbolLocation":128,"imageIndex":1},{"imageOffset":28277160,"symbol":"WTF::Detail::CallableWrapper<WebCore::ThreadTimers::setSharedTimer(WebCore::SharedTimer*)::$_0, void>::call()","symbolLocation":192,"imageIndex":0},{"imageOffset":28439304,"symbol":"WebCore::timerFired(__CFRunLoopTimer*, void*)","symbolLocation":68,"imageIndex":0},{"imageOffset":845420,"symbol":"__CFRUNLOOP_IS_CALLING_OUT_TO_A_TIMER_CALLBACK_FUNCTION__","symbolLocation":32,"imageIndex":2},{"imageOffset":568552,"symbol":"__CFRunLoopDoTimer","symbolLocation":940,"imageIndex":2},{"imageOffset":190808,"symbol":"__CFRunLoopDoTimers","symbolLocation":288,"imageIndex":2},{"imageOffset":508636,"symbol":"__CFRunLoopRun","symbolLocation":1896,"imageIndex":2},{"imageOffset":528868,"symbol":"CFRunLoopRunSpecific","symbolLocation":612,"imageIndex":2},{"imageOffset":268312,"symbol":"-[NSRunLoop(NSRunLoop) runMode:beforeDate:]","symbolLocation":212,"imageIndex":3},{"imageOffset":267948,"symbol":"-[NSRunLoop(NSRunLoop) run]","symbolLocation":64,"imageIndex":3},{"imageOffset":105880,"symbol":"_xpc_objc_main","symbolLocation":496,"imageIndex":4},{"imageOffset":114828,"symbol":"xpc_main","symbolLocation":156,"imageIndex":4},{"imageOffset":1960204,"symbol":"WebKit::XPCServiceMain(int, char const**)","symbolLocation":68,"imageIndex":1},{"imageOffset":104776,"symbol":"start","symbolLocation":2504,"imageIndex":5}]},{"id":248098,"name":"JavaScriptCore libpas scavenger","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":998312,"symbol":"scavenger_thread_main","symbolLocation":1164,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248251,"frames":[{"imageOffset":2960,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}]},{"id":248341,"name":"JIT Worklist Helper Thread","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":304580,"symbol":"WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&)","symbolLocation":1808,"imageIndex":8},{"imageOffset":56680,"symbol":"bool WTF::Condition::waitUntilUnchecked<WTF::Lock>(WTF::Lock&, WTF::TimeWithDynamicClockType const&)","symbolLocation":304,"imageIndex":8},{"imageOffset":57828,"symbol":"WTF::Detail::CallableWrapper<WTF::AutomaticThread::start(WTF::AbstractLocker const&)::$_0, void>::call()","symbolLocation":248,"imageIndex":8},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248342,"name":"JIT Worklist Helper Thread","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":304580,"symbol":"WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&)","symbolLocation":1808,"imageIndex":8},{"imageOffset":56680,"symbol":"bool WTF::Condition::waitUntilUnchecked<WTF::Lock>(WTF::Lock&, WTF::TimeWithDynamicClockType const&)","symbolLocation":304,"imageIndex":8},{"imageOffset":57828,"symbol":"WTF::Detail::CallableWrapper<WTF::AutomaticThread::start(WTF::AbstractLocker const&)::$_0, void>::call()","symbolLocation":248,"imageIndex":8},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248393,"name":"Heap Helper Thread","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":304580,"symbol":"WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&)","symbolLocation":1808,"imageIndex":8},{"imageOffset":56680,"symbol":"bool WTF::Condition::waitUntilUnchecked<WTF::Lock>(WTF::Lock&, WTF::TimeWithDynamicClockType const&)","symbolLocation":304,"imageIndex":8},{"imageOffset":57828,"symbol":"WTF::Detail::CallableWrapper<WTF::AutomaticThread::start(WTF::AbstractLocker const&)::$_0, void>::call()","symbolLocation":248,"imageIndex":8},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248394,"name":"Heap Helper Thread","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":304580,"symbol":"WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&)","symbolLocation":1808,"imageIndex":8},{"imageOffset":56680,"symbol":"bool WTF::Condition::waitUntilUnchecked<WTF::Lock>(WTF::Lock&, WTF::TimeWithDynamicClockType const&)","symbolLocation":304,"imageIndex":8},{"imageOffset":57828,"symbol":"WTF::Detail::CallableWrapper<WTF::AutomaticThread::start(WTF::AbstractLocker const&)::$_0, void>::call()","symbolLocation":248,"imageIndex":8},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248395,"name":"Heap Helper Thread","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":304580,"symbol":"WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&)","symbolLocation":1808,"imageIndex":8},{"imageOffset":56680,"symbol":"bool WTF::Condition::waitUntilUnchecked<WTF::Lock>(WTF::Lock&, WTF::TimeWithDynamicClockType const&)","symbolLocation":304,"imageIndex":8},{"imageOffset":57828,"symbol":"WTF::Detail::CallableWrapper<WTF::AutomaticThread::start(WTF::AbstractLocker const&)::$_0, void>::call()","symbolLocation":248,"imageIndex":8},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248396,"name":"Heap Helper Thread","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":304580,"symbol":"WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&)","symbolLocation":1808,"imageIndex":8},{"imageOffset":56680,"symbol":"bool WTF::Condition::waitUntilUnchecked<WTF::Lock>(WTF::Lock&, WTF::TimeWithDynamicClockType const&)","symbolLocation":304,"imageIndex":8},{"imageOffset":57828,"symbol":"WTF::Detail::CallableWrapper<WTF::AutomaticThread::start(WTF::AbstractLocker const&)::$_0, void>::call()","symbolLocation":248,"imageIndex":8},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248397,"name":"Heap Helper Thread","frames":[{"imageOffset":5148,"symbol":"__psynch_cvwait","symbolLocation":8,"imageIndex":6},{"imageOffset":32876,"symbol":"_pthread_cond_wait","symbolLocation":1232,"imageIndex":7},{"imageOffset":304580,"symbol":"WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&)","symbolLocation":1808,"imageIndex":8},{"imageOffset":56680,"symbol":"bool WTF::Condition::waitUntilUnchecked<WTF::Lock>(WTF::Lock&, WTF::TimeWithDynamicClockType const&)","symbolLocation":304,"imageIndex":8},{"imageOffset":57828,"symbol":"WTF::Detail::CallableWrapper<WTF::AutomaticThread::start(WTF::AbstractLocker const&)::$_0, void>::call()","symbolLocation":248,"imageIndex":8},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":248398,"frames":[{"imageOffset":2960,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}]},{"id":248401,"frames":[{"imageOffset":2960,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}]},{"triggered":true,"id":248453,"name":"Audio Decoder","threadState":{"x":[{"value":0},{"value":1096107074},{"value":1819304813},{"value":0},{"value":0},{"value":9152609256,"symbolLocation":176,"symbol":"vtable for AudibleAudioFile"},{"value":4608},{"value":1984},{"value":4974},{"value":9182906216,"symbolLocation":32,"symbol":"vtable for acv2::ConverterRegistry"},{"value":0},{"value":2},{"value":2},{"value":0},{"value":4294967295},{"value":40313},{"value":9182906216,"symbolLocation":32,"symbol":"vtable for acv2::ConverterRegistry"},{"value":14115688616245593960},{"value":0},{"value":0},{"value":4320442496},{"value":1819304813},{"value":1096107074},{"value":4506851328},{"value":0},{"value":1},{"value":1718642284},{"value":0},{"value":4320442480}],"flavor":"ARM_THREAD_STATE64","lr":{"value":16506512328113036820},"cpsr":{"value":2147483648},"fp":{"value":6165127088},"sp":{"value":6165126960},"esr":{"value":2449473542,"description":"(Data Abort) byte read Translation fault"},"pc":{"value":7883274240,"matchesCrashFrame":1},"far":{"value":4982}},"frames":[{"imageOffset":1652736,"symbol":"acv2::ConverterRegistry::FindFactoryByFormatIDs(unsigned int, unsigned int, std::__1::span<AudioClassDescription const, 18446744073709551615ul>)","symbolLocation":96,"imageIndex":9},{"imageOffset":40468,"symbol":"AudioFormatGetProperty","symbolLocation":15244,"imageIndex":9},{"imageOffset":40468,"symbol":"AudioFormatGetProperty","symbolLocation":15244,"imageIndex":9},{"imageOffset":609936,"symbol":"ExtAudioFile::GetExistingFileInfo(unsigned int)","symbolLocation":524,"imageIndex":9},{"imageOffset":1060004,"symbol":"ExtAudioFileWrapAudioFileIDWithPreferredFormatID","symbolLocation":144,"imageIndex":9},{"imageOffset":28395812,"symbol":"WebCore::AudioFileReader::AudioFileReader(void const*, unsigned long)","symbolLocation":1444,"imageIndex":0},{"imageOffset":28403536,"symbol":"WebCore::createBusFromInMemoryAudioFile(void const*, unsigned long, bool, float)","symbolLocation":60,"imageIndex":0},{"imageOffset":14200548,"symbol":"WTF::Detail::CallableWrapper<WebCore::AsyncAudioDecoder::AsyncAudioDecoder()::$_17, void>::call()","symbolLocation":252,"imageIndex":0},{"imageOffset":446328,"symbol":"WTF::Thread::entryPoint(WTF::Thread::NewThreadContext*)","symbolLocation":352,"imageIndex":8},{"imageOffset":455164,"symbol":"WTF::wtfThreadEntryPoint(void*)","symbolLocation":16,"imageIndex":8},{"imageOffset":5836,"symbol":"_pthread_start","symbolLocation":148,"imageIndex":7},{"imageOffset":2980,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7964545024,
+    "size" : 40259584,
+    "uuid" : "e7944b01-172c-3997-a2b8-c64ea935b9f0",
+    "path" : "\/System\/Library\/PrivateFrameworks\/WebCore.framework\/WebCore",
+    "name" : "WebCore"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 8004804608,
+    "size" : 12439552,
+    "uuid" : "691e0484-9ce9-3547-8fc2-725f03603adf",
+    "path" : "\/System\/Library\/Frameworks\/WebKit.framework\/WebKit",
+    "name" : "WebKit"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7696072704,
+    "size" : 4083712,
+    "uuid" : "42c5c917-0447-3995-b50f-de4d132c2435",
+    "path" : "\/System\/Library\/Frameworks\/CoreFoundation.framework\/CoreFoundation",
+    "name" : "CoreFoundation"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7599931392,
+    "size" : 9744384,
+    "uuid" : "aa92cd58-561a-3414-92f4-b4120298b39a",
+    "path" : "\/System\/Library\/Frameworks\/Foundation.framework\/Foundation",
+    "name" : "Foundation"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 8981020672,
+    "size" : 262144,
+    "uuid" : "be45e2e7-648c-3a60-9c57-e63229b6cfe0",
+    "path" : "\/usr\/lib\/system\/libxpc.dylib",
+    "name" : "libxpc.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 4308697088,
+    "size" : 589824,
+    "uuid" : "444f5041-322e-342e-392e-32370a00e03c",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 8709959680,
+    "size" : 225276,
+    "uuid" : "a5d3b725-78c3-3e19-a765-cceb22355093",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 8980742144,
+    "size" : 49152,
+    "uuid" : "b89b9a5b-55d9-3e84-b6d3-c3da93c1cd39",
+    "path" : "\/usr\/lib\/system\/libsystem_pthread.dylib",
+    "name" : "libsystem_pthread.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 8017985536,
+    "size" : 21856256,
+    "uuid" : "9df5cc9a-cb79-30c0-b74b-f67bf8fa95b2",
+    "path" : "\/System\/Library\/Frameworks\/JavaScriptCore.framework\/JavaScriptCore",
+    "name" : "JavaScriptCore"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7881621504,
+    "size" : 2813952,
+    "uuid" : "85060bff-5542-3af1-b290-896750883d3c",
+    "path" : "\/System\/Library\/PrivateFrameworks\/AudioToolboxCore.framework\/AudioToolboxCore",
+    "name" : "AudioToolboxCore"
+  },
+  {
+    "size" : 0,
+    "source" : "A",
+    "base" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000000"
+  }
+],
+  "vmSummary" : "ReadOnly portion of Libraries: Total=993.5M resident=0K(0%) swapped_out_or_unallocated=993.5M(100%)\nWritable regions: Total=4.9G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=4.9G(100%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nActivity Tracing                   256K        1 \nColorSync                           48K        3 \nCoreServices                        16K        1 \nDispatch continuations            6144K        1 \nJS JIT generated code            512.0M        3 \nJS VM Gigacage                    32.2G        3 \nJS VM Gigacage (reserved)          3.8G        2         reserved VM address space (unallocated)\nKernel Alloc Once                   32K        1 \nMALLOC                            70.7M       44 \nMALLOC guard page                  128K        8 \nSTACK GUARD                        208K       13 \nStack                             7536K       13 \nVM_ALLOCATE                       2128K        6 \nWebKit Malloc                    288.1M        9 \n__AUTH                            3531K      488 \n__AUTH_CONST                      27.9M      681 \n__CTF                               756        1 \n__DATA                            10.1M      669 \n__DATA_CONST                      33.6M      687 \n__DATA_DIRTY                      3319K      575 \n__FONT_DATA                          4K        1 \n__LINKEDIT                       301.7M        5 \n__OBJC_CONST                      6573K      469 \n__OBJC_RO                         78.1M        1 \n__OBJC_RW                         2414K        1 \n__TEXT                           691.8M      701 \ndyld private memory                256K        1 \nmapped file                       59.8M       21 \nshared memory                       32K        2 \n===========                     =======  ======= \nTOTAL                             38.1G     4411 \nTOTAL, minus reserved VM space    34.3G     4411 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+    "name" : "Audio Decoder"
+  }
+},
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "62cdf63ddb3b7109d6d765cc",
+      "factorPackIds" : {
+        "SIRI_UNDERSTANDING_TMDC" : "62cdf6dddb3b7109d6d765cd"
+      },
+      "deploymentId" : 240000007
+    },
+    {
+      "rolloutId" : "60356660bbe37970735c5624",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000027
+    }
+  ],
+  "experiments" : [
+
+  ]
+},
+  "reportNotes" : [
+  "dyld_process_snapshot_create_for_process failed with 5"
+]
+}

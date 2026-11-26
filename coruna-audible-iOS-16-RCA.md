@@ -303,21 +303,32 @@ for (int idx = 0; idx < chapter_count; idx++) {
     cursor += chapters[idx].block_count;
 }
 
-for (int chapter_idx = 0; chapter_idx < chapter_count; chapter_idx++) {
+// Chapter 0 reads exactly block_count descriptors from Section 10.
+for (int block_idx = 0; block_idx < chapters[0].block_count; block_idx++) {
+    BlockRecord *record = &chapters[0].block_ptr[block_idx];
+    IAAReadULong(stream, &record->data_size);
+    IAAReadULong(stream, &record->data_offset);
+    if (stream->current_position != record->data_offset)
+        goto failure;
+    OAAFileSetCurrentPos(stream, stream->current_position + record->data_size);
+}
+
+// Later chapters use a special path. In simplified form, it writes an
+// initial derived offset, reads at most block_count - 1 ordinary descriptors,
+// then synthesizes the final descriptor from the preceding descriptor and
+// the chapter's declared byte length.
+for (int chapter_idx = 1; chapter_idx < chapter_count; chapter_idx++) {
     ChapterRecord *chapter = &chapters[chapter_idx];
+    chapter->block_ptr[0].data_offset = derived_chapter_start;
 
-    for (int block_idx = 0; block_idx < chapter->block_count; block_idx++) {
-        BlockRecord *record = &chapter->block_ptr[block_idx];
-
-        IAAReadULong(stream, &record->data_size);
-        IAAReadULong(stream, &record->data_offset);
-
-        if (stream->current_position != record->data_offset) {
-            goto failure;
-        }
-
-        OAAFileSetCurrentPos(stream, stream->current_position + record->data_size);
+    int ordinary_count = chapter->block_count - 1;
+    for (int block_idx = 0; block_idx < ordinary_count; block_idx++) {
+        // Same Section 10 reads and offset check as above.
     }
+
+    BlockRecord *last = &chapter->block_ptr[max(ordinary_count, 0)];
+    last->data_offset = derived_from_previous_descriptor;
+    last->data_size = chapter->blocks_bytes;
 }
 ```
 
@@ -328,7 +339,8 @@ Let's take an example to understand the vulnerability better. For a file with tw
 1. after the first iteration, `total_blocks = 2`, 
 2. then after the second iteration, `total_blocks = 1` because `0x0000ffff` becomes `-1` after truncation and signed extension. The total allocation size is `1 * 0x10 = 16` bytes,
 3. the program allocates space for *one block*,
-4. when processing the first chapter (index 0), the data for the second block will be written out of bounds.
+4. when processing the first chapter (index 0), the data for the second block is written out of bounds,
+5. the negative count makes chapter one's ordinary Section 10 loop empty, but the later-chapter path still synthesizes a final descriptor at index 2. In total, the parser touches three descriptors while having allocated one.
 
 ```mermaid
 block-beta
@@ -372,6 +384,8 @@ block-beta
     style FOLLOWING_CORRUPTED fill:#f7b2b2,stroke:#dc2626,color:#450a0a
     style OOB fill:#f57676,stroke:#dc2626,color:#450a0a
 ```
+
+The diagram shows the two file-derived writes from chapter zero. A third step, not drawn there to keep the heap layout readable, follows: chapter one's negative count skips its ordinary loop, but its special final-descriptor path writes descriptor index 2, another `0x10` bytes farther into the following heap region.
 
 This effectively transforms the integer truncation and signedness bug into a heap buffer overflow vulnerability.
 
@@ -421,10 +435,10 @@ So an example file could be
 - `512` blocks for the first chapter
 - `-255` (`0x0000ff01` in the file) blocks for the second chapter
 
-Since all 512 blocks of the first chapter will be processed anyway, this means that we can potentially write up to `0xff0` bytes out of bounds.
+All 512 blocks of the first chapter are processed, covering descriptor indices 0 through 511. The negative second chapter skips its ordinary block loop, but its special final-descriptor path still synthesizes descriptor 512. The complete write extent is therefore `513 * 0x10 = 0x2010` bytes, or `0x1000` bytes beyond the requested `0x1010` array.
 
 > [!NOTE]
-> On the tested device, `malloc` rounds the `0x1010` allocation up to `0x1200`, so `0xe00` of the `0xff0`-byte overflow extends beyond the actual heap chunk. This happens because our allocation will be done in the small region, which allocates by "quantums" of 512 bytes. So `ceil(0x1010 / 512) = 9; 9 * 512 = 0x1200`.
+> On the tested device, `malloc` rounds the `0x1010` allocation up to `0x1200`, so `0xe10` of the `0x1000`-byte logical overflow extends beyond the observed heap chunk. This happens because our allocation will be done in the small region, which allocates by "quantums" of 512 bytes. So `ceil(0x1010 / 512) = 9; 9 * 512 = 0x1200`.
 
 Now that we know the maths, we're still missing some information: we cannot just create a file with two chapters, it will not be accepted by the parser.
 If we want to reach the integer truncation bug and the heap overflow, we need to add a few sections required by AudioToolboxCore to our file:

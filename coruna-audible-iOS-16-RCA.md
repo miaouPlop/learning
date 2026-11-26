@@ -1,7 +1,8 @@
 # Bluebird's root cause analysis
 
-Some time sago, google released a [blog post](https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit) about the Coruna exploit kit. It targets iOS 13 to 17.2.1 with no less than 23 exploits. 
+Some times ago, google released a [blog post](https://cloud.google.com/blog/topics/threat-intelligence/coruna-powerful-ios-exploit-kit) about the Coruna exploit kit. It targets iOS 13 to 17.2.1 with no less than 23 exploits.
 There's a chain that's interesting to analyse, because only one of the exploits has a CVE.
+
 
 | Type                      | Codename     | Targeted versions (inclusive) | Fixed version | CVE            |
 | ------------------------- | ------------ | ----------------------------- | ------------- | -------------- |
